@@ -1,0 +1,5 @@
+
+-	项目技术 vue3 ts vite pinia element-plus
+		问题:	再使用element-plus 组件 treeSelect 时 数据怎么进行懒加载操作
+		必要的参数 后台只保存id
+		详细操作: 
