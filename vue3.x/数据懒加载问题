@@ -1,5 +1,6 @@
 
 -	项目技术 vue3 ts vite pinia element-plus
-		问题:	再使用element-plus 组件 treeSelect 时 数据怎么进行懒加载操作
+		问题:	再使用element-plus 组件 treeSelect 时 数据进行懒加载操作
 		必要的参数 后台只保存id
+		在点击treeSelect选择时数据的时候一次性不加载全部数据只有点击treeSelect有children子项时在加载数据
 		详细操作: 
