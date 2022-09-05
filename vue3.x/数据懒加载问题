@@ -20,7 +20,7 @@
 			   :default-expanded-keys="defaultExpandedNodes"
 			 />
 		2):  相关属性
-			v-model					id值。只要这个id值在树里能匹配上，就能够顺利回显出其label值。
+			v-model				        绑定id值。只要这个id值在树里能匹配上，就能够顺利回显出其label值。
 			lazy 					开启懒加载
 			load					加载子树数据的方法
 			value-key 				作为 value 唯一标识的键名。简单说就是主键，根据自己后端返回的字段修改
@@ -54,6 +54,8 @@
 			  }else{
 			    return resolve([]);
 			  }
+			  
+			  
 			  // listDept 是像后端访问组织结构数据的接口，根据实际场景修改
 			  listDept(params).then(response => {
 			    let data = response.data;
@@ -67,4 +69,6 @@
 		  增加/修改的时候，获取从顶层根节点到当前选中节点的key路径，比如：[‘01’,‘0101’,‘010101’]，一并保存到数据表里。
 		  dept数据表里增加这么个字段，从根节点到当前节点的key路径
 		  最后在获取当条数据form内容的同时，把要展开节点的keys路径赋值给default-expanded-keys即可，就会默认展开到当前节点并成功回显label。
-				原文链接：https://blog.csdn.net/qq_38118138/article/details/126659253
+	
+	
+		  原文链接：https://blog.csdn.net/qq_38118138/article/details/126659253
