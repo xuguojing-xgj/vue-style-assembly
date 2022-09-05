@@ -4,3 +4,30 @@
 		必要的参数 后台只保存id
 		在点击treeSelect选择时数据的时候一次性不加载全部数据只有点击treeSelect有children子项时在加载数据
 		详细操作: 
+			DOM : 
+			    <el-tree-select
+				   v-model="form.deptId"
+				   lazy
+				   ref="treeRef"
+				   :load="loadNode"
+				   :props="Props"
+				   value-key="deptId"
+				   node-key="deptId"
+				   placeholder="请选择"
+				   show-checkbox
+				   check-strictly
+				   highlight-current
+				   :default-expanded-keys="defaultExpandedNodes"
+				 />
+		
+			v-model					id值。只要这个id值在树里能匹配上，就能够顺利回显出其label值。
+			lazy 					开启懒加载
+			load					加载子树数据的方法
+			value-key 				作为 value 唯一标识的键名。简单说就是主键，根据自己后端返回的字段修改
+			node-key				每个树节点用来作为唯一标识的属性。简单理解为树节点的主键，同value-key
+			props					配置选项。一般配置value和label的属性值
+			show-checkbox				开启复选框
+			check-strictly				可选择任一级别
+			highlight-current			选中高亮显示
+			default-expanded-keys			默认展开节点的key数组（懒加载时用于数据回显，这个属性非常关键）
+
