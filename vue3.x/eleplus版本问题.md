@@ -1,2 +1,4 @@
 - element plus 2.2.16 版本中 TreeSelect 树状结构 编辑 回显时 不展开子节点 显示id 展开子节点 显示正常
 - 升级 指定 版本 element-plus@2.2.5 版本
+- 或者添加 **render-after-expand** 属性
+- 由于 render-after-expand 属性是默认开启的，所选择的标签名可能不会及时更新显示，您可以把该属性设置为 false 来显示正确的名称
