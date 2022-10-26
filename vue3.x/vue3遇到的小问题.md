@@ -10,3 +10,10 @@ checkboxs: Array(1)
       [[Prototype]]: Object
 }
 ```
+
+###### 在vue3中使用 canvas 生成随机验证码
+- 在canvas标签 使用ref获取不到dom标签时 查看否有 v-if 判断在 dom 树上将标签删除
+```
+报错信息 大致为 ... getContext
+```
+- 使用 toDataURL 获取 canvas 随机生成图片地址
