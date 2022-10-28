@@ -17,3 +17,25 @@ checkboxs: Array(1)
 报错信息 大致为 ... getContext
 ```
 - 使用 toDataURL 获取 canvas 随机生成图片地址
+
+###### v-dialog 弹层改变handler头部背景颜色
+
+```
+   :deep(.el-dialog__header) {
+       background-color: #F5F5F5;
+       margin: 0;
+       span {
+               font-size: 14px;
+               font-weight: bolder;
+            }
+    }
+   :deep(.el-dialog__body) {
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       div {
+           margin-top: 10px;
+       }
+   }
+```
