@@ -46,10 +46,18 @@ checkboxs: Array(1)
 // 并且数据不是为响应式的 具体可看官方文档
 // https://cn.vuejs.org/guide/components/props.html#one-way-data-flow (单项数据流)
 // 使用计算属性进行包裹 使数据成为响应式数据
+
+// 父组件
+<father :data="FatherData"> <father>
+
+// 子组件接收
 interface Props  {
     data: Array<string>
 }
+
 const props = defineProps<Props>()
+
 // 该 prop 变更时计算属性也会自动更新
 const normalizedSize = computed(() => props.data)
+
 ```
