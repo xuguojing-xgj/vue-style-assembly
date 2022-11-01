@@ -39,3 +39,17 @@ checkboxs: Array(1)
        }
    }
 ```
+###### vue3父子传值中数据undefined或者不是响应式
+
+```
+// 在vue3中使用Propsfined() 接收父组件的传值时 刷新页面获取数据为undefined
+// 并且数据不是为响应式的 具体可看官方文档
+// https://cn.vuejs.org/guide/components/props.html#one-way-data-flow (单项数据流)
+// 使用计算属性进行包裹 使数据成为响应式数据
+interface Props  {
+    data: Array<string>
+}
+const props = defineProps<Props>()
+// 该 prop 变更时计算属性也会自动更新
+const normalizedSize = computed(() => props.data)
+```
