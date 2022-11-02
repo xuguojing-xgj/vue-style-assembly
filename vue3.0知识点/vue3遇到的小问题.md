@@ -88,6 +88,7 @@ const imgDialogVisible = ref(false)
 const dialogImageUrl = ref('')
 
 // 图片放大
+// on-preview 点击文件列表中已上传的文件时的钩子
 const handlePictureCardPreview: UploadProps['onPreview'] = (uploadFile) => {
     dialogImageUrl.value = uploadFile.url!
     imgDialogVisible.value = true
