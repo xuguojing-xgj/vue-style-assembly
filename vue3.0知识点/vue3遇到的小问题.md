@@ -62,7 +62,8 @@ const normalizedSize = computed(() => props.data)
 
 ```
 ###### vue3上传图片问题
-
+- before-upload不生效问题
+- 如果有:auto-upload="false" 属性就要用:on-change 方法监听
 ```
 // 模板信息
 <el-upload :file-list="fileList" action="" list-type="picture-card" :auto-upload="false"
@@ -80,7 +81,7 @@ const normalizedSize = computed(() => props.data)
 // 导入
 import { ref, reactive, onMounted } from 'vue'
 import type { UploadFile, UploadFiles, UploadProps, UploadUserFile } from 'element-plus'
-// 保存文件响应式
+// 保存图片响应式
 const fileList = ref<UploadUserFile[]>([])
 // 图片放大
 const imgDialogVisible = ref(false)
