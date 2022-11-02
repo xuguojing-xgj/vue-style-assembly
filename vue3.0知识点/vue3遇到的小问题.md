@@ -61,3 +61,43 @@ const props = defineProps<Props>()
 const normalizedSize = computed(() => props.data)
 
 ```
+###### vue3上传图片问题
+
+```
+// 模板信息
+<el-upload :file-list="fileList" action="" list-type="picture-card" :auto-upload="false"
+:on-preview="handlePictureCardPreview" :on-remove="handleRemove" :on-change="uploadChange">
+    <el-icon>
+        <Plus />
+    </el-icon>
+</el-upload>
+<el-dialog v-model="imgDialogVisible" style="width:400px;">
+      <img w-full style="width:100%;" :src="dialogImageUrl" alt="Preview Image" />
+</el-dialog>
+
+// js/ts 代码
+
+// 导入
+import { ref, reactive, onMounted } from 'vue'
+import type { UploadFile, UploadFiles, UploadProps, UploadUserFile } from 'element-plus'
+// 保存文件响应式
+const fileList = ref<UploadUserFile[]>([])
+// 图片放大
+const imgDialogVisible = ref(false)
+// 放大图片地址
+const dialogImageUrl = ref('')
+
+// 图片放大
+const handlePictureCardPreview: UploadProps['onPreview'] = (uploadFile) => {
+    dialogImageUrl.value = uploadFile.url!
+    imgDialogVisible.value = true
+}
+// 移除图片
+const handleRemove: UploadProps['onRemove'] = (uploadFile, uploadFiles) => {
+    console.log(uploadFile, uploadFiles)
+}
+// 上传时
+const uploadChange = (uploadFile: UploadFile, uploadFiles: UploadFiles) => {
+    console.log('1111111111', uploadFile);
+}
+```
